@@ -6,11 +6,10 @@
         <div class="col-md-4">
 
             <?php if (isset($_SESSION['message'])) { ?>
-                <div class="alert alert-<?= $_SESSION['message_type'] ?> alert-dismissible fade show" role="alert">
+
+                <div class="alert alert-<?= $_SESSION['message_type'] ?>  alert-dismissible fade show" role="alert">
                     <?= $_SESSION['message'] ?>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
 
             <?php session_unset();
@@ -25,7 +24,7 @@
                         <textarea name="description" class="form-control" rows="2" placeholder="Descripcion de Tarea"></textarea>
                     </div>
 
-                    <input type="submit" class="btn btn-success btn-block" name="save_task" value="Guardar">
+                    <input type="submit" class="btn btn-success w-100" name="save_task" value="Guardar">
 
                 </form>
             </div>
