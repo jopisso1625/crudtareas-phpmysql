@@ -19,11 +19,24 @@
                 <form action="guardar_tarea.php" method="POST">
                     <div class="form-group">
                         <input type="text" name="name" class="form-control" placeholder="Nombre de Tarea">
+                        <?php if (isset($_SESSION['errn'])) { ?>
+
+                            <p class="error"><?= $_SESSION['errn'] ?>
+                            <p>
+
+                            <?php
+                        } ?>
                     </div>
                     <div class="form-group">
                         <textarea name="description" class="form-control" rows="2" placeholder="Descripcion de Tarea"></textarea>
-                    </div>
+                        <?php if (isset($_SESSION['errd'])) { ?>
 
+                            <p class="error"><?= $_SESSION['errd'] ?>
+                            <p>
+
+                            <?php session_unset();
+                        } ?>
+                    </div>
                     <input type="submit" class="btn btn-success w-100" name="save_task" value="Guardar">
 
                 </form>
